@@ -14,6 +14,6 @@ class Controller
 		
 		$data = $model->getData();
 		$data['user'] = $_SERVER['PHP_AUTH_USER'];
-		$view->days($model->getData());
+		$view->days($data);
 	}
 }
