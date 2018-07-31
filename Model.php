@@ -11,7 +11,14 @@ class Model
 	
 	public function getData() {
 		return [
-			'body' => '<b>Hello, WORLD!</b>'
+			'days_list' => [
+				['year' => 2018, 'month' => 1, 'day' => 1 ],
+				['year' => 2018, 'month' => 1, 'day' => 2 ],
+				['year' => 2018, 'month' => 1, 'day' => 3 ],
+				['year' => 2018, 'month' => 1, 'day' => 4 ],
+				['year' => 2018, 'month' => 1, 'day' => 5 ],
+			],
+			'content' => 'First, select a day'
 		];
 	}
 	

@@ -14,7 +14,7 @@ class View
 	 */
 	protected function layout($data) {
 		try {
-			$content = $this->templateHtml('layout', $data);
+			$content = $this->render('layout', $data);
 		} catch (Exception $e) {
 			$content = 'Layout render error: ' . $e->getMessage();
 		}
@@ -23,13 +23,13 @@ class View
 	}
 	
 	public function days($data) {
-		extract($data);
-		
 		try {
-			$body = $this->templateHtml('days', [
-				'days' => '1,2,3,4',
-				'content' => 'First, select day'
-			]);
+			foreach ($data['days_list'] as &$day) {
+				$day = $this->render('day_item', ['title' => implode('-', $day)]);
+			}
+			$data['days_list'] = implode($data['days_list']);
+			$data['days_list'] = $this->render('days_list', $data);
+			$body = $this->render('days', $data);
 		} catch (Exception $e) {
 			$body = 'Days render error: ' . $e->getMessage();
 		}
@@ -45,8 +45,9 @@ class View
 	 * @return string
 	 * @throws Exception
 	 */
-	protected function templateHtml($name, $data) {
+	protected function render($name, $data) {
 		if (array_key_exists('file', $data)) throw new \Exception('key `file` not allowed into template data');
+		
 		extract($data);
 		$file = "/html/{$name}.html";
 		
