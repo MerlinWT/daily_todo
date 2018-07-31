@@ -1,3 +1,5 @@
 <?php
 
-	echo "<b>HELLO</b>";
+	$controller = new Controller();
+	
+	$controller->indexAction();
