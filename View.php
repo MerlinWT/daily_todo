@@ -10,13 +10,16 @@ class View
 {
 	/**
 	 * @param array $data
+	 * @return string
 	 */
 	protected function layout($data) {
 		try {
-			echo $this->templateHtml('layout', $data);
+			$content = $this->templateHtml('layout', $data);
 		} catch (Exception $e) {
-			echo 'Layout render error: ' . $e->getMessage();
+			$content = 'Layout render error: ' . $e->getMessage();
 		}
+		
+		return $content;
 	}
 	
 	public function days($data) {
@@ -31,7 +34,7 @@ class View
 			$body = 'Days render error: ' . $e->getMessage();
 		}
 		
-		$this->layout([
+		echo $this->layout([
 			'body' => $body
 		]);
 	}
@@ -49,7 +52,10 @@ class View
 		
 		ob_start();
 		include __DIR__ . $file;
-		return ob_get_flush();
+		$ob_content = ob_get_contents();
+		ob_end_clean();
+		
+		return $ob_content;
 	}
 	
 }
