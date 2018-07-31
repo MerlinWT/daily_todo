@@ -12,6 +12,6 @@ class Controller
 		$model = new \Model();
 		$view = new \View();
 		
-		$view->render($model->getData());
+		$view->days($model->getData());
 	}
 }
