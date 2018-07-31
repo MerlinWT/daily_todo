@@ -35,7 +35,8 @@ class View
 		}
 		
 		echo $this->layout([
-			'body' => $body
+			'body' => $body,
+			'user' => $data['user'],
 		]);
 	}
 	
