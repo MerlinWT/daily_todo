@@ -11,8 +11,6 @@ class requestHttp {
 		$uri = parse_url($_SERVER['REQUEST_URI']);
 		$uri['path'] = explode('/', $uri['path']);
 		
-		var_export($uri);
-		
 		return $uri['path'][2] ?: date('Ymd');
 	}
 }
