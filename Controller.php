@@ -8,8 +8,8 @@
 
 class Controller
 {
-	public function indexAction() {
-		$model = new \Model();
+	public function indexAction($day) {
+		$model = new \Model($day);
 		$view = new \View();
 		
 		$data = $model->getData();

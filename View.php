@@ -57,4 +57,10 @@ class View
 		return "$year-$month-$day";
 	}
 	
+	public function getDayId($year, $month, $day) {
+		$month = str_pad($month, 2, '0', STR_PAD_LEFT);
+		$day = str_pad($day, 2, '0', STR_PAD_LEFT);
+		return "$year$month$day";
+	}
+	
 }

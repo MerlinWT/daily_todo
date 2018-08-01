@@ -8,6 +8,12 @@
 
 class Model
 {
+	private $day;
+	
+	public function __construct($day) {
+		
+		$this->day = $day;
+	}
 	
 	public function getData() {
 		return [
@@ -18,7 +24,7 @@ class Model
 				['year' => 2018, 'month' => 1, 'day' => 4 ],
 				['year' => 2018, 'month' => 1, 'day' => 5 ],
 			],
-			'content' => 'First, select a day'
+			'day_content' => ['id' => $this->day],
 		];
 	}
 	

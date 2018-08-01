@@ -3,7 +3,7 @@
      * @var View $this
      *
      * @var array $days_list
-     * @var string $content
+     * @var array $day_content
      */
 ?>
 
@@ -12,6 +12,6 @@
         <?php $this->render('days_list', ['days_list' => $days_list]) ?>
     </div>
     <div id="day-content" style="display: inline-block; position: absolute; margin: 16px 16px 16px 140px; width: 100%;left: 0;">
-        <?= $content ?>
+        <?php $this->render('day_content', $day_content) ?>
     </div>
 </div>

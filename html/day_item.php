@@ -6,8 +6,11 @@
  * @var int $month
  * @var int $day
  */
+
+    $title = $this->getDayTitle($year, $month, $day);
+    $id = $this->getDayId($year, $month, $day);
 ?>
 
 <li>
-    <a href="#"><?= $this->getDayTitle($year, $month, $day) ?></a>
+    <a href="#<?= $id ?>"><?= $title ?></a>
 </li>

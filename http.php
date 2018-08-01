@@ -3,7 +3,11 @@
 	include_once 'Controller.php';
 	include_once 'Model.php';
 	include_once 'View.php';
-
-	$controller = new \Controller();
+	include_once 'requestHttp.php';
 	
-	$controller->indexAction();
+	$request = new requestHttp();
+	
+	$controller = new \Controller();
+	$controller->indexAction(
+		$request->getDay()
+	);
