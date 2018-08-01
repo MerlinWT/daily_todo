@@ -12,5 +12,5 @@
 ?>
 
 <li>
-    <a href="#<?= $id ?>"><?= $title ?></a>
+    <a href="/day/<?= $id ?>"><?= $title ?></a>
 </li>

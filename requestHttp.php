@@ -8,8 +8,11 @@
 
 class requestHttp {
 	public function getDay() {
-		$uri = var_export(parse_url($_SERVER['REQUEST_URI']));
+		$uri = parse_url($_SERVER['REQUEST_URI']);
+		$uri['path'] = explode('/', $uri['path']);
 		
-		return $uri['fragment'] ?: date('Ymd');
+		var_export($uri);
+		
+		return $uri['path'][2] ?: date('Ymd');
 	}
 }
