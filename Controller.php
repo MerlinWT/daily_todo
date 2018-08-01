@@ -13,7 +13,8 @@ class Controller
 		$view = new \View();
 		
 		$data = $model->getData();
-		$data['user'] = $_SERVER['PHP_AUTH_USER'];
-		$view->days($data);
+		$view->layout([
+			'body' => $view->render('days', $data, true)
+		]);
 	}
 }
