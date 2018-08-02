@@ -9,5 +9,5 @@
 ?>
 
 <li>
-    <a href="<?= $id ?>"><?= $title ?></a>
+    <a href="<?= $href ?>"><?= $title ?></a>
 </li>

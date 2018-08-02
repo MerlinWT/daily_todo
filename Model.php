@@ -12,20 +12,20 @@ class Model
 	
 	private $days_tasks = [
 		20180101 => [
-			['id' => 1, 'title' => 'task 1'],
+			['href' => '#1', 'title' => 'task 1'],
 		],
 		20180102 => [
-			['id' => 2, 'title' => 'task 2'],
-			['id' => 3, 'title' => 'task 3'],
+			['href' => '#2', 'title' => 'task 2'],
+			['href' => '#3', 'title' => 'task 3'],
 		],
 		20180103 => [
-			['id' => 4, 'title' => 'task 4'],
+			['href' => '#4', 'title' => 'task 4'],
 		],
 		20180104 => [
-			['id' => 5, 'title' => 'task 5'],
+			['href' => '#5', 'title' => 'task 5'],
 		],
 		20180105 => [
-			['id' => 6, 'title' => 'task 6'],
+			['href' => '#6', 'title' => 'task 6'],
 		],
 	];
 	
@@ -36,11 +36,11 @@ class Model
 	public function getData() {
 		return [
 			'days_list' => [
-				['id' => 20180101, 'title' => '2018-01-01'],
-				['id' => 20180102, 'title' => '2018-01-02'],
-				['id' => 20180103, 'title' => '2018-01-03'],
-				['id' => 20180104, 'title' => '2018-01-04'],
-				['id' => 20180105, 'title' => '2018-01-05'],
+				['id' => 20180101, 'href' => '/day/20180101', 'title' => '2018-01-01'],
+				['id' => 20180102, 'href' => '/day/20180102', 'title' => '2018-01-02'],
+				['id' => 20180103, 'href' => '/day/20180103', 'title' => '2018-01-03'],
+				['id' => 20180104, 'href' => '/day/20180104', 'title' => '2018-01-04'],
+				['id' => 20180105, 'href' => '/day/20180105', 'title' => '2018-01-05'],
 			],
 			'day_content' => [
 				'id' => $this->day,
